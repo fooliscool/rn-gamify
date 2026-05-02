@@ -8,5 +8,5 @@ on:
       - develop
 
 jobs:
-  call-workflow:
-    uses: devkishore/rn-monorepo/.github/workflows/checks-high.yml@main
+  test-workflow:
+    uses: actions/starter-workflows/.github/workflows/node.yml@main
