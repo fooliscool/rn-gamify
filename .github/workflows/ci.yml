@@ -9,6 +9,6 @@ on:
 
 jobs:
   call-high-workflow:
-    uses: fooliscool/rn-monorepo/.github/workflows/checks-high.yml@main
+    uses: devkishore/rn-monorepo/.github/workflows/checks-high.yml@main
     secrets:
       PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
