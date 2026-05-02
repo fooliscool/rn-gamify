@@ -10,4 +10,5 @@ on:
 jobs:
   call-high-workflow:
     uses: devkishore/rn-monorepo/.github/workflows/checks-high.yml@main
-    secrets: inherit
+    secrets:
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
