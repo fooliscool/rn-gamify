@@ -1,5 +1,6 @@
 name: CI
 on:
+  push:  # Run on all pushes
   pull_request:  # Run on PRs to any branch
   schedule:
     - cron: '0 2 * * 0'  # Weekly Sunday 2 AM UTC
