@@ -8,12 +8,12 @@ on:
 jobs:
   high:
     if: github.event_name == 'pull_request'
-    uses: fooliscool/rn-monorepo/.github/workflows/checks-high.yml@main
+    uses: devkishore/rn-monorepo/.github/workflows/checks-high.yml@main
   
   medium:
     if: github.event_name == 'schedule'
-    uses: fooliscool/rn-monorepo/.github/workflows/checks-medium.yml@main
+    uses: devkishore/rn-monorepo/.github/workflows/checks-medium.yml@main
   
   low:
     if: github.event_name == 'schedule'
-    uses: fooliscool/rn-monorepo/.github/workflows/checks-low.yml@main
+    uses: devkishore/rn-monorepo/.github/workflows/checks-low.yml@main
