@@ -9,4 +9,4 @@ on:
 
 jobs:
   call-workflow:
-    uses: devkishore/rn-monorepo/.github/workflows/checks-high.yml@main
+    uses: fooliscool/rn-monorepo/.github/workflows/checks-high.yml@main
