@@ -1,19 +1,13 @@
 name: CI
+
 on:
-  push:  # Run on all pushes
-  pull_request:  # Run on PRs to any branch
-  schedule:
-    - cron: '0 2 * * 0'  # Weekly Sunday 2 AM UTC
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
 
 jobs:
-  high:
-    if: github.event_name == 'pull_request'
+  call-high-workflow:
     uses: devkishore/rn-monorepo/.github/workflows/checks-high.yml@main
-  
-  medium:
-    if: github.event_name == 'schedule'
-    uses: devkishore/rn-monorepo/.github/workflows/checks-medium.yml@main
-  
-  low:
-    if: github.event_name == 'schedule'
-    uses: devkishore/rn-monorepo/.github/workflows/checks-low.yml@main
+    secrets: inherit
