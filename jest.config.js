@@ -20,11 +20,7 @@ module.exports = {
     ],
   },
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
-  collectCoverageFrom: [
-    'src/**/*.ts',
-    '!src/**/*.d.ts',
-    '!src/index.ts',
-  ],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts', '!src/index.ts'],
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/'],
   coverageThreshold: {
     global: {
