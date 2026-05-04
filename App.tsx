@@ -19,6 +19,7 @@ function App() {
         <Text style={{ color: 'white' }}>
           Hi there!
         </Text>
+        <AppContent />
       </View> 
     </SafeAreaProvider>
   );
