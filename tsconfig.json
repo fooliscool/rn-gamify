@@ -14,12 +14,12 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
-    "types": ["react", "react-native"],
+    "types": ["jest", "react", "react-native"],
     "baseUrl": ".",
     "paths": {
       "@rn-monorepo/common": ["../../packages/common/src"]
     }
   },
-  "include": ["*.tsx", "*.ts", "__tests__/**/*"],
+  "include": ["**/*.tsx", "**/*.ts"],
   "exclude": ["node_modules", "dist", "android", "ios"]
 }
