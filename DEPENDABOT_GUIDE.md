@@ -17,22 +17,27 @@ See `.github/dependabot.yml` for detailed configuration.
 ## How to Check if Dependabot is Working
 
 ### 1. Check GitHub Repository Settings
+
 - Go to your GitHub repository
 - Navigate to **Settings** → **Code security and analysis**
 - Look for **Dependabot alerts** and **Dependabot security updates**
 - Both should show as **Enabled**
 
 ### 2. Check Pull Requests
+
 - Go to the **Pull Requests** tab
 - Filter by `dependabot` label or author
 - You should see PRs like: `chore(deps): bump dependency-name from x.x.x to y.y.y`
 
 ### 3. Check Dependabot Activity
+
 - Go to **Insights** → **Dependency graph** → **Dependabot**
 - View recent dependency update activity
 
 ### 4. Enable Dependabot Alerts
+
 If alerts aren't enabled:
+
 1. Settings → Code security and analysis
 2. Enable **Dependabot alerts**
 3. Enable **Dependabot security updates** (auto-merges security patches)
@@ -56,6 +61,7 @@ If alerts aren't enabled:
 ## Verify Configuration is Valid
 
 Run this command to validate the YAML:
+
 ```bash
 npx dependabot-cli update-pr --config-file=.github/dependabot.yml
 ```
@@ -68,9 +74,9 @@ To modify update schedules or settings, edit `.github/dependabot.yml`:
 
 ```yaml
 schedule:
-  interval: 'weekly'  # daily, weekly, monthly
-  day: 'monday'       # monday, tuesday, etc.
-  time: '03:00'       # 00:00 to 23:00
+  interval: 'weekly' # daily, weekly, monthly
+  day: 'monday' # monday, tuesday, etc.
+  time: '03:00' # 00:00 to 23:00
   timezone: 'UTC'
 ```
 
@@ -83,15 +89,18 @@ schedule:
 ## Troubleshooting
 
 **No Dependabot PRs appearing?**
+
 - Check repository has access to Dependabot (must be public or have GitHub Advanced Security)
 - Verify `.github/dependabot.yml` is on the default branch
 - Check if Dependabot alerts are enabled in settings
 
 **Too many PRs?**
+
 - Adjust `open-pull-requests-limit` in `.github/dependabot.yml`
 - Change schedule interval to `monthly` instead of `weekly`
 
 **Want to skip updates?**
+
 - Add to ignore list in dependabot.yml:
   ```yaml
   ignore:

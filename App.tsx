@@ -5,14 +5,7 @@
  * @format
  */
 
-import {
-  Animated,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-  View,
-  Text,
-} from 'react-native';
+import { Animated, StatusBar, StyleSheet, useColorScheme, View, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useEffect, useRef } from 'react';
 import { ErrorBoundary } from './ErrorBoundary';
@@ -36,7 +29,7 @@ function AnimatedBall() {
           duration: 800,
           useNativeDriver: true,
         }),
-      ]),
+      ])
     ).start();
 
     // Rotating animation
@@ -45,7 +38,7 @@ function AnimatedBall() {
         toValue: 1,
         duration: 3000,
         useNativeDriver: true,
-      }),
+      })
     ).start();
 
     // Fade animation
@@ -61,7 +54,7 @@ function AnimatedBall() {
           duration: 1500,
           useNativeDriver: true,
         }),
-      ]),
+      ])
     ).start();
   }, [bounceAnim, rotateAnim, fadeAnim]);
 
@@ -75,10 +68,7 @@ function AnimatedBall() {
       style={[
         styles.animatedBall,
         {
-          transform: [
-            { translateY: bounceAnim },
-            { rotate: spin },
-          ],
+          transform: [{ translateY: bounceAnim }, { rotate: spin }],
           opacity: fadeAnim,
         },
       ]}
@@ -95,12 +85,8 @@ function App() {
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={[styles.container, { backgroundColor: bgColor }]}>
-        <Text style={[styles.title, { color: textColor }]}>
-          React Native Animations
-        </Text>
-        <Text style={[styles.subtitle, { color: textColor }]}>
-          Bouncing & Rotating Ball
-        </Text>
+        <Text style={[styles.title, { color: textColor }]}>React Native Animations</Text>
+        <Text style={[styles.subtitle, { color: textColor }]}>Bouncing & Rotating Ball</Text>
 
         <View style={styles.animationContainer}>
           <AnimatedBall />
@@ -116,12 +102,8 @@ function App() {
           <Text style={[styles.feature, { color: textColor }]}>
             ✓ Rotating Animation (360° spin)
           </Text>
-          <Text style={[styles.feature, { color: textColor }]}>
-            ✓ Fade In/Out (Opacity)
-          </Text>
-          <Text style={[styles.feature, { color: textColor }]}>
-            ✓ Loop Sequences
-          </Text>
+          <Text style={[styles.feature, { color: textColor }]}>✓ Fade In/Out (Opacity)</Text>
+          <Text style={[styles.feature, { color: textColor }]}>✓ Loop Sequences</Text>
           <Text style={[styles.feature, { color: textColor }]}>
             ✓ Native Driver (60 FPS Performance)
           </Text>
