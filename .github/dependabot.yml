@@ -1,0 +1,93 @@
+version: 2
+updates:
+  # NPM dependencies
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '03:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 5
+    pull-request-branch-name:
+      separator: '/'
+    rebase-strategy: 'auto'
+    allow:
+      - dependency-type: 'all'
+    ignore:
+      - dependency-name: 'react-native'
+        versions: ['0.86.x']
+    commit-message:
+      prefix: 'chore'
+      prefix-scope: 'deps'
+      include: 'scope'
+    reviewers:
+      - 'devkishore'
+    assignees:
+      - 'devkishore'
+    labels:
+      - 'dependencies'
+      - 'npm'
+    milestone: 1
+    versioning-strategy: 'auto'
+
+  # Gradle dependencies (Android)
+  - package-ecosystem: 'gradle'
+    directory: '/android'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '04:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 3
+    pull-request-branch-name:
+      separator: '/'
+    rebase-strategy: 'auto'
+    reviewers:
+      - 'devkishore'
+    assignees:
+      - 'devkishore'
+    labels:
+      - 'dependencies'
+      - 'android'
+    commit-message:
+      prefix: 'chore'
+      prefix-scope: 'android'
+      include: 'scope'
+
+  # GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'tuesday'
+      time: '03:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 5
+    rebase-strategy: 'auto'
+    pull-request-branch-name:
+      separator: '/'
+    reviewers:
+      - 'devkishore'
+    assignees:
+      - 'devkishore'
+    labels:
+      - 'dependencies'
+      - 'github-actions'
+    commit-message:
+      prefix: 'ci'
+      prefix-scope: 'actions'
+      include: 'scope'
+
+groups:
+  # Group related updates
+  development-dependencies:
+    dependency-type: 'development'
+    update-types:
+      - 'minor'
+      - 'patch'
+
+  production-dependencies:
+    dependency-type: 'production'
+    update-types:
+      - 'patch'
